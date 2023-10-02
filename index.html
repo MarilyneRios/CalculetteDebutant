@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculette avec javascript - pour débutant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <div id="calculator">
+            <!--form pour collecter des données-->
+            <form  name="calculatorForm">
+                <div id="display">
+                    <!--pour afficher le résultat en lecture seule "readonly"-->
+                    <input type="text" name="display" id="result" readonly> 
+                </div>
+                <div class="row">
+                    <!--1ere ligne-->
+                    <input type="button" value="AC" onclick="clearDisplay()" class="operator"> <!--efface tout-->
+                    <!--.toString() convertit  en string, .slice(0, -1) découpe la chaîne de caractères résultante en supprimant le dernier caractère (-1)
+                    => supprime le dernier caractère  -->
+                    <input type="button" name = "DE" value="DE" onclick="deleteLastCharacter()"> 
+                    <input type="button" name = "%" value="%" onclick="appendToDisplay('%')" class="operator">
+                    <input type="button" name = "/" value="/" onclick="appendToDisplay('/')" class="operator">  
+                </div>
+                <div class="row">
+                    <!--2e ligne: 
+                        onclick="display.value += '7'" : 
+                        Cette partie du code attribue un comportement JavaScript 
+                        à l'événement onclick, qui se déclenche lorsque le bouton est cliqué. -->
+                    <input type="button" name = "7" value="7" onclick="appendToDisplay('7')">
+                    <input type="button" name = "8" value="8" onclick="appendToDisplay('8')"> 
+                    <input type="button" name = "9" value="9" onclick="appendToDisplay('9')">
+                    <input type="button" name = "*" value="*" onclick="appendToDisplay('*')" class="operator">  
+                </div>
+                <div class="row">
+                    <!--3e ligne-->
+                    <input type="button" name = "4" value="4" onclick= "appendToDisplay('4')" >
+                    <input type="button" name = "5" value="5" onclick="appendToDisplay('5')" > 
+                    <input type="button" name = "6" value="6" onclick="appendToDisplay('6')" >
+                    <input type="button" name = "-" value="-" onclick="appendToDisplay('-')"  class="operator">  
+                </div>
+                <div class="row">
+                    <!--4e ligne-->
+                    <input type="button" name = "1" value="1" onclick="appendToDisplay('1')" >
+                    <input type="button" name = "2" value="2" onclick="appendToDisplay('2')" > 
+                    <input type="button" name = "3" value="3" onclick="appendToDisplay('3')" >
+                    <input type="button" name = "+" value="+" onclick="appendToDisplay('+')"  class="operator">  
+                </div>
+                <div class="row">
+                    <!--5e ligne-->
+                    <div class="row">
+                        <input type="button" value="00" onclick="appendToDisplay('00')">
+                        <input type="button" value="0" onclick="appendToDisplay('0')">
+                        <input type="button" value="," onclick="appendToDisplay('.')">
+                        <input type="button" value="=" id="equal" onclick="calculate()">
+                    </div> 
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

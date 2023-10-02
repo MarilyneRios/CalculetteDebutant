@@ -1,0 +1,71 @@
+
+/*initialisation de la page*/
+*{
+    margin : 0;
+    padding : 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* la largeur et la hauteur de l'élément sont calculées 
+    en incluant à la fois le contenu réel, les bordures et le rembourrage*/
+    box-sizing: border-box;
+}
+
+#container {
+    /* 100% de la largeur de son conteneur parent*/
+    width: 100%,;
+    /*une hauteur de 100% de la hauteur de la fenêtre du navigateur*/
+    height: 100vh;
+    background-color: #e3f9ff;
+    /*Afficher au centre*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    background-color: cornflowerblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input{
+    border: 0; /* supprime la bordure */
+    outline: 0; /* supprime également l'outline (contour)
+     par défaut des éléments <input>*/
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    /*créer des ombres, -8px = horizontal et vertical,
+    15px = le flou (blur de l'ombre)
+    rgba, 0,1 = la transparence de l'ombre,
+    crée deux ombres, l'une en haut à gauche (blanche) et 
+    l'autre en bas à droite (noire),*/
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.1), 
+    5px 5px 15px rgba(0,0,0,0.1);
+    background-color: transparent;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+#display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0
+}
+
+#display input{
+    text-align: right;
+    flex: 1; /*flex: 1;, vous indiquez que ces éléments <input> 
+    devraient occuper autant d'espace que possible dans le conteneur flex*/
+    font-size: 45px;
+    box-shadow: none; /* supprime toute ombre (shadow) 
+    qui pourrait être appliquée par défaut à ces éléments*/
+    background-color: rgb(29, 27, 27);
+    color:#fff;
+}
+
+.operator{
+    
+}
